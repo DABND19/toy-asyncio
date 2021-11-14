@@ -30,7 +30,7 @@ class Future:
             raise self.exception
         return self.result
 
-    def __iter__(self):
+    def __await__(self):
         while not self.done:
             yield None
         return self.get_result()
